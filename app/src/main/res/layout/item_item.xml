@@ -6,7 +6,7 @@
   <data>
     <variable
         name="viewModel"
-        type="com.ground0.codechallenge.viewmodel.ListViewModelFactory.ListItemViewModel"
+        type="com.ground0.codechallenge.core.viewmodel.ListViewModelFactory.ListItemViewModel"
         />
   </data>
   <android.support.v7.widget.CardView
@@ -43,6 +43,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_below="@id/i_item_time"
+          android:layout_marginBottom="@dimen/view_step_1"
           android:fontFamily="sans-serif-medium"
           android:text="@{viewModel.item.title}"
           android:textSize="18sp"
@@ -52,6 +53,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_below="@id/i_item_title"
+          android:layout_marginBottom="@dimen/view_step_1"
           android:ellipsize="end"
           android:maxLines="5"
           android:text="@{viewModel.item.description}"
@@ -61,8 +63,12 @@
           android:id="@+id/i_item_status"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_below="@id/i_item_description"
+          android:layout_alignBaseline="@id/i_item_time"
+          android:layout_alignParentRight="true"
+          android:background="@{viewModel.statusColor}"
+          android:fontFamily="sans-serif-medium"
           android:text="@{viewModel.item.status}"
+          android:textColor="@color/textColorInverse"
           />
 
     </RelativeLayout>

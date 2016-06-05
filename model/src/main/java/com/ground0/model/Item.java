@@ -31,7 +31,12 @@ public class Item {
     this.status = status;
   }
 
-  public String getStatus() {
+  @Status
+  public int getStatus() {
+    return status;
+  }
+
+  public String getStatusString() {
     switch (status){
       case PENDING :
         return "Pending";

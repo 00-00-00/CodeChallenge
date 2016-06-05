@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.ground0.codechallenge.R;
 import com.ground0.codechallenge.core.BaseActivity;
 import com.ground0.codechallenge.databinding.ActivityDetailBinding;
-import com.ground0.codechallenge.viewmodel.DetailActivityViewModel;
+import com.ground0.codechallenge.core.viewmodel.DetailActivityViewModel;
 
 /**
  * Created by zer0 on 5/6/16.

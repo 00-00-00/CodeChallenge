@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
 import com.ground0.codechallenge.databinding.ItemItemBinding;
-import com.ground0.codechallenge.viewmodel.ListActivityViewModel;
-import com.ground0.codechallenge.viewmodel.ListViewModelFactory;
+import com.ground0.codechallenge.core.viewmodel.ListActivityViewModel;
+import com.ground0.codechallenge.core.viewmodel.ListViewModelFactory;
 import com.ground0.model.Item;
 import java.util.List;
 

@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
   <data>
     <variable
         name="viewModel"
-        type="com.ground0.codechallenge.viewmodel.DetailActivityViewModel"
+        type="com.ground0.codechallenge.core.viewmodel.DetailActivityViewModel"
         />
   </data>
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
-      android:paddingTop="@dimen/view_step_1"
       android:paddingBottom="@dimen/view_step_1"
       android:paddingLeft="@dimen/view_step_2"
       android:paddingRight="@dimen/view_step_2"
+      android:paddingTop="@dimen/view_step_1"
       >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="@{viewModel.item.title}"
+        android:fontFamily="sans-serif-light"
+        android:text="@{viewModel.timeString}"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_step_1"
+        android:fontFamily="sans-serif-medium"
+        android:text="@{viewModel.item.title}"
+        android:textAppearance="?android:textAppearanceMedium"
+        />
+
+    <Switch
+        app:bind="@{viewModel.updateBoolean}"
+        android:layout_marginBottom="@dimen/view_step_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{viewModel.switchText}"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_step_1"
         android:text="@{viewModel.item.description}"
         />
     <TextView

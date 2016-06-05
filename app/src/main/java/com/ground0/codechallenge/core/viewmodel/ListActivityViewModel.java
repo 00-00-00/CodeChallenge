@@ -1,4 +1,4 @@
-package com.ground0.codechallenge.viewmodel;
+package com.ground0.codechallenge.core.viewmodel;
 
 import android.content.Intent;
 import com.ground0.codechallenge.activity.DetailActivity;
@@ -11,7 +11,6 @@ import com.ground0.repository.DataStore.DataStore;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import org.threeten.bp.LocalDateTime;
 
 /**
  * Created by zer0 on 5/6/16.

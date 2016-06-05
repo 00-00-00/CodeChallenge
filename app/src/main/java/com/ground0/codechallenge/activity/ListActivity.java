@@ -10,7 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
 import com.ground0.codechallenge.core.BaseActivity;
-import com.ground0.codechallenge.viewmodel.ListActivityViewModel;
+import com.ground0.codechallenge.core.viewmodel.ListActivityViewModel;
 
 /**
  * Created by zer0 on 3/6/16.

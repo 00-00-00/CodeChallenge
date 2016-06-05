@@ -1,6 +1,7 @@
-package com.ground0.codechallenge.viewmodel;
+package com.ground0.codechallenge.core.viewmodel;
 
 import android.view.View;
+import com.ground0.codechallenge.R;
 import com.ground0.model.Item;
 import org.threeten.bp.format.DateTimeFormatter;
 
@@ -34,6 +35,17 @@ public class ListViewModelFactory {
     public String getTimeString() {
       DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("EEE, dd MMM yy h:mm a");
       return item.getTimeStamp().format(DATE_TIME_FORMATTER);
+    }
+
+    public int getStatusColor() {
+      switch (item.getStatus()) {
+        case Item.ACCEPTED :
+          return R.color.status_accepted;
+        case Item.COMPLETED:
+          return R.color.status_completed;
+        case Item.PENDING:
+          return R.color.status_pending;
+      }
     }
 
     public void openDetails(View view) {
