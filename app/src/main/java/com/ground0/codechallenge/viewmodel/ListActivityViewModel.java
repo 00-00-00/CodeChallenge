@@ -23,14 +23,22 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
   DataStore dataStore = new DataStore();
 
   final Comparator<Item> ASCENDING_TIME_COMPARATOR = (lhs, rhs) -> {
-    if (lhs.getTimeStamp().isBefore(rhs.getTimeStamp())) return -1;
-    else if (lhs.getTimeStamp().isAfter(rhs.getTimeStamp())) return 1;
-    else return 0;
+    if (lhs.getTimeStamp().isBefore(rhs.getTimeStamp())) {
+      return -1;
+    } else if (lhs.getTimeStamp().isAfter(rhs.getTimeStamp())) {
+      return 1;
+    } else {
+      return 0;
+    }
   };
   final Comparator<Item> DESCENDING_TIME_COMPARATOR = (lhs, rhs) -> {
-    if (lhs.getTimeStamp().isBefore(rhs.getTimeStamp())) return 1;
-    else if (lhs.getTimeStamp().isAfter(rhs.getTimeStamp())) return -1;
-    else return 0;
+    if (lhs.getTimeStamp().isBefore(rhs.getTimeStamp())) {
+      return 1;
+    } else if (lhs.getTimeStamp().isAfter(rhs.getTimeStamp())) {
+      return -1;
+    } else {
+      return 0;
+    }
   };
 
   @Override public void afterRegister() {
@@ -55,13 +63,13 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
     getActivity().startActivity(new Intent(getActivity(), DetailActivity.class));
   }
 
-  public void sortData(boolean ascending) {
-    if(ascending) {
-      Collections.sort(mData, ASCENDING_TIME_COMPARATOR);
-    }
-    else
-    {
-      Collections.sort(mData, DESCENDING_TIME_COMPARATOR);
-    }
+  public void sortDataAscending() {
+    Collections.sort(mData, ASCENDING_TIME_COMPARATOR);
+    mListAdapter.notifyDataSetChanged();
+  }
+
+  public void sortDataDescending() {
+    Collections.sort(mData, DESCENDING_TIME_COMPARATOR);
+    mListAdapter.notifyDataSetChanged();
   }
 }
