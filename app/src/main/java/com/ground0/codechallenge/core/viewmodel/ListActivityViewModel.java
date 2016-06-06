@@ -6,6 +6,7 @@ import com.ground0.codechallenge.activity.ListActivity;
 import com.ground0.codechallenge.adapter.ListAdapter;
 import com.ground0.codechallenge.core.BaseActivityViewModel;
 import com.ground0.codechallenge.core.event.LaunchItemDetailEvent;
+import com.ground0.codechallenge.core.event.UpdateItemEvent;
 import com.ground0.model.Item;
 import com.ground0.repository.DataStore.DataStore;
 import java.util.Collections;
@@ -43,6 +44,20 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
   @Override public void afterRegister() {
     super.afterRegister();
     loadData();
+
+    getCompositeSubscription().add(getActivity().getBaseApplication()
+        .getAppBehaviourBus()
+        .filter(event -> event instanceof UpdateItemEvent)
+        .subscribe(event1 -> {
+          Item updatedItem = ((UpdateItemEvent)event1).data();
+          for (Item item : mData) {
+            if (updatedItem.getItemId().equals(item.getItemId())) {
+              item = updatedItem;
+              mListAdapter.notifyDataSetChanged();
+              break;
+            }
+          }
+        }));
   }
 
   public void loadData() {

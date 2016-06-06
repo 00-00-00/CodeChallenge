@@ -38,7 +38,7 @@ public class DetailActivity extends BaseActivity {
   private void initSwitches() {
 
     switch (viewModel.getItem().getStatus()) {
-      case Item.ACCEPTED :
+      case Item.ACCEPTED:
         updatePending.setChecked(true);
         updateCompleted.setVisibility(View.VISIBLE);
         break;
@@ -49,6 +49,7 @@ public class DetailActivity extends BaseActivity {
       case Item.COMPLETED:
         updatePending.setChecked(true);
         updatePending.setEnabled(false);
+        updateCompleted.setVisibility(View.VISIBLE);
         updateCompleted.setChecked(true);
         break;
     }
@@ -77,5 +78,10 @@ public class DetailActivity extends BaseActivity {
   @Override protected void onStop() {
     super.onStop();
     viewModel.saveChanges();
+  }
+
+  @Override public void onBackPressed() {
+    viewModel.saveChanges();
+    super.onBackPressed();
   }
 }

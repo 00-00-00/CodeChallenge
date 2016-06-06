@@ -46,6 +46,7 @@ public class DataStore {
     for (Item item: mDataList) {
       if (item.getItemId().equals(updatedItem.getItemId())) {
         item = updatedItem;
+        break;
       }
     }
   }

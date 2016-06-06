@@ -12,8 +12,9 @@ public interface Event<T> {
   @Event.EventType int eventType();
 
   @Retention(RetentionPolicy.SOURCE)
-  @IntDef({ITEM_DETAIL})
+  @IntDef({ITEM_DETAIL, UPDATE_ITEM})
   public @interface EventType {}
 
   public static final int ITEM_DETAIL = 0;
+  public static final int UPDATE_ITEM = 1;
 }
