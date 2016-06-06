@@ -2,7 +2,7 @@
   <!-- Default screen margins, per the Android Design guidelines. -->
   <dimen name="activity_horizontal_margin">16dp</dimen>
   <dimen name="activity_vertical_margin">16dp</dimen>
-
+  <dimen name="divider_default">2dp</dimen>
   <!-- Discreetise dimens so that dimensions fit to the 8p grid mentioned in guidelines -->
   <dimen name="view_step_1">8dp</dimen>
   <dimen name="view_step_2">16dp</dimen>

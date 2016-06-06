@@ -9,6 +9,7 @@
   <color name="status_completed">@color/md_green_700</color>
 
   <color name="textColorInverse">@color/md_white_1000</color>
+  <color name="divider_default">@color/md_grey_300</color>
 
   <!--entire color-->
   <color name="md_amber_100">#FFECB3</color>

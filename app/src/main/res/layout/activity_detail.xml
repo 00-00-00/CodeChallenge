@@ -17,6 +17,7 @@
       android:paddingTop="@dimen/view_step_1"
       >
     <TextView
+        android:layout_marginBottom="@dimen/view_step_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
@@ -25,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/view_step_1"
+        android:layout_marginBottom="@dimen/view_step_2"
         android:fontFamily="sans-serif-medium"
         android:text="@{viewModel.item.title}"
         android:textAppearance="?android:textAppearanceMedium"
@@ -43,7 +44,7 @@
         android:id="@+id/a_detail_switch_updateCompleted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/view_step_1"
+        android:layout_marginBottom="@dimen/view_step_2"
         android:text="@string/switch_completed"
         android:visibility="gone"
         />
