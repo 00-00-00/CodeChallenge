@@ -68,7 +68,6 @@
           android:layout_height="wrap_content"
           android:layout_alignBaseline="@id/i_item_time"
           android:layout_alignParentRight="true"
-          android:background="@{viewModel.statusColor}"
           android:fontFamily="sans-serif-medium"
           android:gravity="center_vertical"
           android:paddingBottom="@dimen/view_step_1"
@@ -76,14 +75,22 @@
           android:paddingRight="@dimen/view_step_2"
           android:paddingTop="@dimen/view_step_1"
           android:text="@{viewModel.item.getStatusString}"
-          android:textColor="@color/textColorInverse"
           />
-<!--
+
       <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/divider_default"
+          android:layout_alignLeft="@+id/i_item_status"
+          android:layout_alignRight="@+id/i_item_status"
           android:layout_below="@id/i_item_status"
           android:background="@{viewModel.statusColor}"
-          android:layout_width="match_parent"
-          android:layout_height="@dimen/divider_default"/>-->
+          />
+      <!--
+            <View
+                android:layout_below="@id/i_item_status"
+                android:background="@{viewModel.statusColor}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_default"/>-->
 
     </RelativeLayout>
   </android.support.v7.widget.CardView>
