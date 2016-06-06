@@ -24,12 +24,9 @@
         android:background="?android:selectableItemBackground"
         android:onClick="@{viewModel.openDetails}"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/view_step_1"
-        android:paddingLeft="@dimen/view_step_2"
-        android:paddingRight="@dimen/view_step_2"
-        android:paddingTop="@dimen/view_step_1"
         >
       <TextView
+          android:layout_marginTop="@dimen/view_step_1"
           android:id="@+id/i_item_time"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -63,11 +60,12 @@
           android:id="@+id/i_item_status"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:padding="@dimen/view_step_1"
           android:layout_alignBaseline="@id/i_item_time"
           android:layout_alignParentRight="true"
           android:background="@{viewModel.statusColor}"
           android:fontFamily="sans-serif-medium"
-          android:text="@{viewModel.item.status}"
+          android:text="@{viewModel.item.getStatusString}"
           android:textColor="@color/textColorInverse"
           />
 

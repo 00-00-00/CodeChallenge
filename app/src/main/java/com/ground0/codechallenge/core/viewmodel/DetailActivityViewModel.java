@@ -5,6 +5,7 @@ import com.ground0.codechallenge.core.BaseActivityViewModel;
 import com.ground0.codechallenge.core.databinding.BindableBoolean;
 import com.ground0.codechallenge.core.event.LaunchItemDetailEvent;
 import com.ground0.model.Item;
+import com.ground0.repository.DataStore.DataStore;
 import org.threeten.bp.format.DateTimeFormatter;
 
 /**
@@ -13,7 +14,7 @@ import org.threeten.bp.format.DateTimeFormatter;
 public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivity> {
 
   Item mItem;
-  public BindableBoolean updateBoolean = new BindableBoolean();
+  DataStore dataStore = new DataStore();
 
   @Override public void afterRegister() {
     super.afterRegister();
@@ -28,7 +29,6 @@ public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivit
 
   private void initUI(Item data) {
     mItem = data;
-    getActivity().initUI();
   }
 
   public Item getItem() {
@@ -40,16 +40,11 @@ public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivit
     return mItem.getTimeStamp().format(DATE_TIME_FORMATTER);
   }
 
-  public String getSwitchText() {
-    switch (mItem.getStatus()) {
-      case Item.PENDING:
-        return "Accepted";
-      case Item.ACCEPTED:
-        return "Completed";
-      case Item.COMPLETED:
-        return "Completed";
-      default:
-        return "";
-    }
+  public void setStatus(int status) {
+    mItem.setStatus(status);
+  }
+
+  public void saveChanges() {
+    dataStore.updateItem(mItem);
   }
 }

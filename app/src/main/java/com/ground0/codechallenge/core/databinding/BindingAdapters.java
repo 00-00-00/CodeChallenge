@@ -15,7 +15,7 @@ public class BindingAdapters {
     return bindableBoolean.get();
   }
 
-  @BindingAdapter("app:bind")
+  @BindingAdapter({"app:bind"})
   public static void bindSwitch(Switch view, final BindableBoolean value) {
     view.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
       value.set(isChecked);

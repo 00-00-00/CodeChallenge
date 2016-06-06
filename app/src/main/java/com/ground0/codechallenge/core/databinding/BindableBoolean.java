@@ -7,13 +7,13 @@ import android.databinding.BaseObservable;
  */
 public class BindableBoolean extends BaseObservable {
 
-  Boolean data;
+  boolean data;
 
-  public Boolean get() {
+  public boolean get() {
     return data;
   }
 
-  public void set(Boolean data) {
+  public void set(boolean data) {
     this.data = data;
   }
 }

@@ -18,11 +18,10 @@ public class Item {
   String description;
   LocalDateTime timeStamp;
 
+  @Retention(RetentionPolicy.SOURCE) @IntDef({ PENDING, ACCEPTED, COMPLETED })
+  public @interface Status {
+  }
 
-
-  @Retention(RetentionPolicy.SOURCE)
-  @IntDef({PENDING, ACCEPTED, COMPLETED})
-  public @interface Status {}
   public static final int PENDING = 0;
   public static final int ACCEPTED = 1;
   public static final int COMPLETED = 2;
@@ -31,20 +30,23 @@ public class Item {
     this.status = status;
   }
 
-  @Status
-  public int getStatus() {
+  @Status public int getStatus() {
     return status;
   }
 
+  public void setStatus(@Status int status) {
+    this.status = status;
+  }
+
   public String getStatusString() {
-    switch (status){
-      case PENDING :
+    switch (status) {
+      case PENDING:
         return "Pending";
-      case ACCEPTED :
+      case ACCEPTED:
         return "Accepted";
-      case COMPLETED :
+      case COMPLETED:
         return "Completed";
-      default :
+      default:
         return "Status error";
     }
   }
@@ -71,6 +73,10 @@ public class Item {
 
   public void setTimeStamp(LocalDateTime timeStamp) {
     this.timeStamp = timeStamp;
+  }
+
+  public Long getItemId() {
+    return itemId;
   }
 
   public Item(Long id, int status, String title, String description, LocalDateTime timeStamp) {

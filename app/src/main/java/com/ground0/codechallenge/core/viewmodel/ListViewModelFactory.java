@@ -1,5 +1,6 @@
 package com.ground0.codechallenge.core.viewmodel;
 
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import com.ground0.codechallenge.R;
 import com.ground0.model.Item;
@@ -39,12 +40,18 @@ public class ListViewModelFactory {
 
     public int getStatusColor() {
       switch (item.getStatus()) {
-        case Item.ACCEPTED :
-          return R.color.status_accepted;
+        case Item.ACCEPTED:
+          return ContextCompat.getColor(listActivityViewModel.getActivity(),
+              R.color.status_accepted);
         case Item.COMPLETED:
-          return R.color.status_completed;
+          return ContextCompat.getColor(listActivityViewModel.getActivity(),
+              R.color.status_completed);
         case Item.PENDING:
-          return R.color.status_pending;
+          return ContextCompat.getColor(listActivityViewModel.getActivity(),
+              R.color.status_pending);
+        default:
+          return ContextCompat.getColor(listActivityViewModel.getActivity(),
+              R.color.transparent);
       }
     }
 

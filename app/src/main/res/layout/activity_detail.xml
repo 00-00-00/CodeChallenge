@@ -9,6 +9,7 @@
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:animateLayoutChanges="true"
       android:orientation="vertical"
       android:paddingBottom="@dimen/view_step_1"
       android:paddingLeft="@dimen/view_step_2"
@@ -31,12 +32,23 @@
         />
 
     <Switch
-        app:bind="@{viewModel.updateBoolean}"
-        android:layout_marginBottom="@dimen/view_step_1"
-        android:layout_width="wrap_content"
+        android:id="@+id/a_detail_switch_updatePending"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{viewModel.switchText}"
+        android:layout_marginBottom="@dimen/view_step_1"
+        android:text="@string/switch_accepted"
         />
+
+    <Switch
+        android:id="@+id/a_detail_switch_updateCompleted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_step_1"
+        android:text="@string/switch_completed"
+        android:visibility="gone"
+        />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +58,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{viewModel.item.status}"
+        android:text="@{viewModel.item.statusString}"
         />
 
   </LinearLayout>
