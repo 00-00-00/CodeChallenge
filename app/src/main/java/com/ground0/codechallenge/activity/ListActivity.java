@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
@@ -24,6 +25,7 @@ import java.util.List;
 public class ListActivity extends BaseActivity {
 
   @BindView(R.id.a_list_recycler) RecyclerView recyclerView;
+  @BindView(R.id.a_list_empty_view) View emptyView;
   AlertDialog alertDialog;
   ListActivityViewModel viewModel = new ListActivityViewModel();
   CharSequence[] status = { "Pending", "Accepted", "Completed" };
@@ -72,6 +74,7 @@ public class ListActivity extends BaseActivity {
     recyclerView.setLayoutManager(
         new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     recyclerView.setAdapter(viewModel.getAdapter());
+    viewModel.getAdapter().setEmptyView(emptyView);
   }
 
   private void initFilterDialog() {

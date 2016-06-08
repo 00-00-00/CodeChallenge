@@ -3,4 +3,5 @@
     <string name="action_sort">Sort by Time</string>
     <string name="switch_accepted">Accepted</string>
     <string name="switch_completed">Completed</string>
+    <string name="empty_view">Nothing to display</string>
 </resources>

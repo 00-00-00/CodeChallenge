@@ -21,14 +21,25 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
   List<Item> mData;
   LayoutInflater mLayoutInflater;
   ListViewModelFactory viewModelFactory;
+  View emptyView;
 
   public ListAdapter(ListActivityViewModel viewModel, List<Item> mData) {
     this.mData = mData;
+    if (emptyView != null) emptyView.setVisibility(mData.isEmpty() ? View.VISIBLE : View.GONE);
     viewModelFactory = new ListViewModelFactory(viewModel);
   }
 
   public void setData(List<Item> mData) {
     this.mData = mData;
+    if (emptyView != null) emptyView.setVisibility(mData.isEmpty() ? View.VISIBLE : View.GONE);
+  }
+
+  public void setEmptyView(View emptyView) {
+    this.emptyView = emptyView;
+  }
+
+  @Override public int getItemViewType(int position) {
+    return super.getItemViewType(position);
   }
 
   @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
