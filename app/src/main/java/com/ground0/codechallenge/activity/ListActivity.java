@@ -29,7 +29,7 @@ public class ListActivity extends BaseActivity {
   AlertDialog alertDialog;
   ListActivityViewModel viewModel = new ListActivityViewModel();
   CharSequence[] status = { "Pending", "Accepted", "Completed" };
-  boolean[] statusFlags = { true, true, true };
+  boolean[] statusFlags = { false, false, false };
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

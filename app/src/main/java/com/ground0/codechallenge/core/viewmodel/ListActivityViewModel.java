@@ -91,12 +91,9 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
 
   public void filter(List<Integer> statuses) {
     mListAdapter.setData(mData);
-    for (Integer integer : statuses)
-      System.out.print("Filter list :" + integer);
+    mListAdapter.notifyDataSetChanged();
     List<Item> tempList = new ArrayList<>();
-    if (statuses.size() == 0) {
-      mListAdapter.setData(mData);
-    } else {
+    if (statuses.size() != 0) {
       for (Item item : mData) {
         for (int status : statuses) {
           if (status == (item.getStatus())) {
