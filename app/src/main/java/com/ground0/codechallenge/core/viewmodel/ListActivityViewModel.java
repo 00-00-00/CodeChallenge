@@ -1,6 +1,7 @@
 package com.ground0.codechallenge.core.viewmodel;
 
 import android.content.Intent;
+import android.databinding.tool.util.L;
 import com.ground0.codechallenge.activity.DetailActivity;
 import com.ground0.codechallenge.activity.ListActivity;
 import com.ground0.codechallenge.adapter.ListAdapter;
@@ -9,6 +10,7 @@ import com.ground0.codechallenge.core.event.LaunchItemDetailEvent;
 import com.ground0.codechallenge.core.event.UpdateItemEvent;
 import com.ground0.model.Item;
 import com.ground0.repository.DataStore.DataStore;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -49,7 +51,7 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
         .getAppBehaviourBus()
         .filter(event -> event instanceof UpdateItemEvent)
         .subscribe(event1 -> {
-          Item updatedItem = ((UpdateItemEvent)event1).data();
+          Item updatedItem = ((UpdateItemEvent) event1).data();
           for (Item item : mData) {
             if (updatedItem.getItemId().equals(item.getItemId())) {
               item = updatedItem;
@@ -85,5 +87,25 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
   public void sortDataDescending() {
     Collections.sort(mData, DESCENDING_TIME_COMPARATOR);
     mListAdapter.notifyDataSetChanged();
+  }
+
+  public void filter(List<Integer> statuses) {
+    mListAdapter.setData(mData);
+    for (Integer integer : statuses)
+      System.out.print("Filter list :" + integer);
+    List<Item> tempList = new ArrayList<>();
+    if (statuses.size() == 0) {
+      mListAdapter.setData(mData);
+    } else {
+      for (Item item : mData) {
+        for (int status : statuses) {
+          if (status == (item.getStatus())) {
+            tempList.add(item);
+          }
+        }
+      }
+      mListAdapter.setData(tempList);
+      mListAdapter.notifyDataSetChanged();
+    }
   }
 }

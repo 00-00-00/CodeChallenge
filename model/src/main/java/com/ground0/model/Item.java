@@ -26,11 +26,7 @@ public class Item {
   public static final int ACCEPTED = 1;
   public static final int COMPLETED = 2;
 
-  public void setNavigationMode(@Status int status) {
-    this.status = status;
-  }
-
-  @Status public int getStatus() {
+  public @Status int getStatus() {
     return status;
   }
 

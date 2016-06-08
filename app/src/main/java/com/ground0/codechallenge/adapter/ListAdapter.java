@@ -27,6 +27,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     viewModelFactory = new ListViewModelFactory(viewModel);
   }
 
+  public void setData(List<Item> mData) {
+    this.mData = mData;
+  }
+
   @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     if (mLayoutInflater == null) {
       mLayoutInflater = LayoutInflater.from(parent.getContext());

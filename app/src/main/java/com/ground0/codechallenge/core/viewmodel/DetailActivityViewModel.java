@@ -41,7 +41,7 @@ public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivit
     return mItem.getTimeStamp().format(DATE_TIME_FORMATTER);
   }
 
-  public void setStatus(int status) {
+  public void setStatus(@Item.Status int status) {
     mItem.setStatus(status);
   }
 
