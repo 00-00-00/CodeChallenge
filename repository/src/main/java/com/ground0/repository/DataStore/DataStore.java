@@ -15,7 +15,7 @@ public class DataStore {
 
   private static DataStore dataStore = new DataStore();
 
-  public DataStore getInstance() {
+  public static DataStore getInstance() {
     return dataStore;
   }
 

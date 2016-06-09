@@ -8,8 +8,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
 import com.ground0.codechallenge.core.BaseActivity;
-import com.ground0.codechallenge.databinding.ActivityDetailBinding;
 import com.ground0.codechallenge.core.viewmodel.DetailActivityViewModel;
+import com.ground0.codechallenge.databinding.ActivityDetailBinding;
 import com.ground0.model.Item;
 
 /**

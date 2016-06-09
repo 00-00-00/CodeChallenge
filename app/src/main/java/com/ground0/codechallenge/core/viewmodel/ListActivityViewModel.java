@@ -1,7 +1,6 @@
 package com.ground0.codechallenge.core.viewmodel;
 
 import android.content.Intent;
-import android.databinding.tool.util.L;
 import com.ground0.codechallenge.activity.DetailActivity;
 import com.ground0.codechallenge.activity.ListActivity;
 import com.ground0.codechallenge.adapter.ListAdapter;
@@ -22,7 +21,7 @@ public class ListActivityViewModel extends BaseActivityViewModel<ListActivity> {
 
   List<Item> mData;
   ListAdapter mListAdapter;
-  DataStore dataStore = new DataStore();
+  DataStore dataStore = DataStore.getInstance();
 
   final Comparator<Item> ASCENDING_TIME_COMPARATOR = (lhs, rhs) -> {
     if (lhs.getTimeStamp().isBefore(rhs.getTimeStamp())) {

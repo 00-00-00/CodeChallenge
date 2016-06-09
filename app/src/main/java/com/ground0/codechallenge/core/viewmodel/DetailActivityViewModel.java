@@ -2,7 +2,6 @@ package com.ground0.codechallenge.core.viewmodel;
 
 import com.ground0.codechallenge.activity.DetailActivity;
 import com.ground0.codechallenge.core.BaseActivityViewModel;
-import com.ground0.codechallenge.core.databinding.BindableBoolean;
 import com.ground0.codechallenge.core.event.LaunchItemDetailEvent;
 import com.ground0.codechallenge.core.event.UpdateItemEvent;
 import com.ground0.model.Item;
@@ -15,7 +14,7 @@ import org.threeten.bp.format.DateTimeFormatter;
 public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivity> {
 
   Item mItem;
-  DataStore dataStore = DataStore;
+  DataStore dataStore = DataStore.getInstance();
 
   @Override public void afterRegister() {
     super.afterRegister();

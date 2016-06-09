@@ -1,13 +1,10 @@
 package com.ground0.codechallenge.core;
 
-import android.support.annotation.Nullable;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-import com.ground0.codechallenge.R;
-import rx.subjects.BehaviorSubject;
 import rx.subscriptions.CompositeSubscription;
 
 public abstract class BaseActivity extends AppCompatActivity {

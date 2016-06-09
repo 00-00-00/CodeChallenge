@@ -9,9 +9,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
-import com.ground0.codechallenge.databinding.ItemItemBinding;
 import com.ground0.codechallenge.core.viewmodel.ListActivityViewModel;
 import com.ground0.codechallenge.core.viewmodel.ListViewModelFactory;
+import com.ground0.codechallenge.databinding.ItemItemBinding;
 import com.ground0.model.Item;
 import java.util.List;
 
