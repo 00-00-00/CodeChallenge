@@ -15,7 +15,7 @@ import org.threeten.bp.format.DateTimeFormatter;
 public class DetailActivityViewModel extends BaseActivityViewModel<DetailActivity> {
 
   Item mItem;
-  DataStore dataStore = new DataStore();
+  DataStore dataStore = DataStore;
 
   @Override public void afterRegister() {
     super.afterRegister();

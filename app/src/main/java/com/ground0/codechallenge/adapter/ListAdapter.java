@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import butterknife.ButterKnife;
 import com.ground0.codechallenge.R;
 import com.ground0.codechallenge.databinding.ItemItemBinding;
@@ -22,6 +24,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
   LayoutInflater mLayoutInflater;
   ListViewModelFactory viewModelFactory;
   View emptyView;
+
+  int lastPosition = -1;
 
   public ListAdapter(ListActivityViewModel viewModel, List<Item> mData) {
     this.mData = mData;
@@ -52,6 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
     ItemItemBinding itemItemBinding = DataBindingUtil.bind(holder.itemView);
+    setAnimation(holder.itemView, position);
     ListViewModelFactory.ListItemViewModel itemViewModel =
         viewModelFactory.createViewModel(mData.get(position));
     holder.setViewModel(itemViewModel);
@@ -78,5 +83,21 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
       super(itemView);
       ButterKnife.bind(this, itemView);
     }
+  }
+
+  private void setAnimation(View viewToAnimate, int position)
+  {
+    if (position > lastPosition)
+    {
+      Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(), android.R.anim.slide_in_left);
+      viewToAnimate.startAnimation(animation);
+      lastPosition = position;
+    }
+  }
+
+  @Override
+  public void onViewDetachedFromWindow(final ViewHolder holder)
+  {
+    holder.itemView.clearAnimation();
   }
 }

@@ -11,7 +11,6 @@ import com.ground0.codechallenge.core.BaseActivity;
 import com.ground0.codechallenge.databinding.ActivityDetailBinding;
 import com.ground0.codechallenge.core.viewmodel.DetailActivityViewModel;
 import com.ground0.model.Item;
-import com.ground0.repository.DataStore.DataStore;
 
 /**
  * Created by zer0 on 5/6/16.
