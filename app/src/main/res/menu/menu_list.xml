@@ -5,7 +5,7 @@
   <item
       android:id="@+id/m_list_filter"
       android:icon="@drawable/ic_filter_list_white_24dp"
-      android:title="@string/action_sort"
+      android:title="@string/action_filter"
       app:showAsAction="always"/>
 
 

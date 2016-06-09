@@ -23,7 +23,7 @@ public class DataStore {
   }
 
   final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm");
-  static String loremIpsum =
+  String loremIpsum =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis laoreet mauris, sit amet mattis leo molestie at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum in odio leo. Suspendisse accumsan ex ipsum, a finibus quam tempor vel. Aliquam et risus non velit semper volutpat. Cras dui massa, consequat non vulputate sed, vehicula id tellus. Aenean laoreet consequat erat sollicitudin aliquet. Maecenas commodo, nulla eget pretium sodales, sapien lectus semper leo, ut consectetur augue leo quis justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque condimentum malesuada tortor a aliquam. Nam iaculis nisl et urna imperdiet cursus. Nunc tincidunt ipsum sit amet semper mattis. In maximus tortor sed tellus dictum imperdiet. Ut volutpat est risus, id elementum enim condimentum vel. Curabitur ultrices sollicitudin lorem vitae pharetra. ";
 
   List<Item> mDataList = new ArrayList<Item>() {{
